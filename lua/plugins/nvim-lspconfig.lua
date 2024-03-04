@@ -40,6 +40,13 @@ local config = function()
 		},
 	})
 
+    lspconfig.gopls.setup({
+        capabilities = capabilities,
+        filetypes = {
+            "go"
+        }
+    })
+
 
 	-- bash
 	lspconfig.bashls.setup({
