@@ -4,26 +4,6 @@ local config = function()
 	local lspconfig = require("lspconfig")
 	local capabilities = cmp_nvim_lsp.default_capabilities()
 
-	-- lua
-	lspconfig.lua_ls.setup({
-		capabilities = capabilities,
-		settings = { -- custom settings for lua
-			Lua = {
-				-- make the language server recognize "vim" global
-				diagnostics = {
-					globals = { "vim" },
-				},
-				workspace = {
-					-- make language server aware of runtime files
-					library = {
-						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-						[vim.fn.stdpath("config") .. "/lua"] = true,
-					},
-				},
-			},
-		},
-	})
-
 	-- python
 	lspconfig.pyright.setup({
 		capabilities = capabilities,
@@ -46,40 +26,6 @@ local config = function()
             "go"
         }
     })
-
-
-	-- bash
-	lspconfig.bashls.setup({
-		capabilities = capabilities,
-		filetypes = { "sh", "aliasrc" },
-	})
-
-	-- typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
-	lspconfig.emmet_ls.setup({
-		capabilities = capabilities,
-		filetypes = {
-			"typescriptreact",
-			"javascriptreact",
-			"javascript",
-			"css",
-			"sass",
-			"scss",
-			"less",
-			"svelte",
-			"vue",
-			"html",
-		},
-	})
-
-
-	-- C/C++
-	lspconfig.clangd.setup({
-		capabilities = capabilities,
-		cmd = {
-			"clangd",
-			"--offset-encoding=utf-16",
-		},
-	})
 
 	local flake8 = require("efmls-configs.linters.flake8")
 	local black = require("efmls-configs.formatters.black")
@@ -104,6 +50,7 @@ local config = function()
 			"css",
 			"c",
 			"cpp",
+            "go",
 		},
 		init_options = {
 			documentFormatting = true,
