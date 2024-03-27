@@ -8,6 +8,9 @@ return {
             code_style = {
                 comments = 'none'
             }
+            highlights = {
+                Comment = { italic=False }
+            }
         }
 	end
 }
