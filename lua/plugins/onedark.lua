@@ -9,7 +9,7 @@ return {
                 comments = 'none'
             },
             highlights = {
-                Comment = { italic=False }
+                Comment = { italic = false }
             }
         }
 	end
