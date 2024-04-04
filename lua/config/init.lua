@@ -21,7 +21,8 @@ local opts = {
 		lazy = true,
 	},
 	install = {
-		colorscheme = { "onedark" }
+		-- colorscheme = { "onedark" }
+		colorscheme = { "tokyonight" }
 	},
 	rtp = {
 		disabled_plugins =  {
