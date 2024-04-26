@@ -21,7 +21,8 @@ local opts = {
 	},
 	install = {
 		-- colorscheme = { "onedark" }
-		colorscheme = { "tokyonight" }
+		-- colorscheme = { "tokyonight" }
+		colorscheme = { "gruvbox-baby" }
 	},
 	rtp = {
 		disabled_plugins =  {
